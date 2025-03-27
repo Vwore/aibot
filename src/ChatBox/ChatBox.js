@@ -55,7 +55,7 @@ export default function ChatBox() {
         width: "100%",
       }}
     >
-      <Box className={style.navbar}>
+      <header className={style.navbar} >
         {isMobile && (
           <div>
             <MenuIcon
@@ -76,7 +76,7 @@ export default function ChatBox() {
         <Typography variant="h1" className={style.heading}>
           Bot AI
         </Typography>
-      </Box>
+      </header>
 
       {conversation.length === 0 ? (
         <>

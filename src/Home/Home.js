@@ -3,19 +3,8 @@ import style from "./style.module.css";
 import { Grid2 } from "@mui/material";
 import SideBar from "../SideBar/SideBar";
 import ChatBox from "../ChatBox/ChatBox";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { Route, Routes } from "react-router";
 import PastConv from "../PastConv/PastConv";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <ChatBox />,
-  },
-  {
-    path: "/history",
-    element: <PastConv />,
-  },
-]);
 
 export default function Home() {
   return (
@@ -29,8 +18,10 @@ export default function Home() {
         bgcolor={"background.paper"}
         sx={{ marginLeft: 0, marginRight: 0, width: "100%" }}
       >
-        {/* <ChatBox /> */}
-        <RouterProvider router={router} />
+        <Routes>
+          <Route path="/" element={<ChatBox />} />
+          <Route path="/history" element={<PastConv />} />
+        </Routes>
       </Grid2>
     </Grid2>
   );
