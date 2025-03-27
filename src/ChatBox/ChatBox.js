@@ -35,6 +35,16 @@ export default function ChatBox() {
   const isMobile = useMediaQuery("(max-width:900px)");
   const [showDrawer, setShowDrawer] = useState(false);
 
+  function handleSave(conversation) {
+    if (localStorage.getItem("conversation") === null) {
+      localStorage.setItem("conversation", JSON.stringify([]));
+    }
+    let data = JSON.parse(localStorage.getItem("conversation"));
+    data = [...data, { time: Date(), conversation }];
+    localStorage.setItem("conversation", JSON.stringify(data));
+    setConversation([]);
+  }
+
   useEffect(() => {
     console.log(chatRef);
     if (chatRef.current) {
@@ -55,7 +65,7 @@ export default function ChatBox() {
         width: "100%",
       }}
     >
-      <header className={style.navbar} >
+      <header className={style.navbar}>
         {isMobile && (
           <div>
             <MenuIcon
@@ -102,7 +112,7 @@ export default function ChatBox() {
           ))}
         </Box>
       )}
-      <Box className={style.inputBox}>
+      <Box component="form" className={style.inputBox}>
         <TextField
           id="standard-basic"
           variant="standard"
@@ -116,7 +126,8 @@ export default function ChatBox() {
         <Button
           variant="contained"
           type="submit"
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             setConversation([
               ...conversation,
               {
@@ -133,7 +144,13 @@ export default function ChatBox() {
         >
           Ask
         </Button>
-        <Button variant="contained" type="button">
+        <Button
+          variant="contained"
+          type="button"
+          onClick={() => {
+            handleSave(conversation);
+          }}
+        >
           Save
         </Button>
       </Box>
