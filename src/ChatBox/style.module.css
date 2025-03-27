@@ -1,0 +1,104 @@
+.chatBox {
+  padding: 10px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100% !important;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.heading {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+  color: #9785ba;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25vh;
+}
+
+.logo {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: contain;
+  box-shadow: -4px 4px 10px 0px #00000026;
+  margin-top: 20px;
+}
+
+.template {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px 0px #00000026;
+  width: 30vw;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.templateText1 {
+  font-family: Ubuntu;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin: 5px;
+}
+
+.templateText2 {
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #00000080;
+  margin: 15px;
+}
+
+.templates {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  justify-content: center;
+  gap: 20px;
+}
+@media (max-width: 900px) {
+  .templates {
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    flex-wrap: nowrap;
+  }
+}
+.inputBox {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.converContainer {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  gap: 15px;
+  height: 80vh;
+  overflow-y: auto;
+  background-color: #f6f0ff;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+.converContainer::-webkit-scrollbar {
+  display: none;
+}

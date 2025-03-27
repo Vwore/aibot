@@ -1,0 +1,33 @@
+.newChat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #d8c9ff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: block;
+  border-radius: 25%;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  object-fit: cover;
+}
+
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  gap: 20px;
+}
+
+.past{
+    background-color: #d8c9ff;
+    border-radius: 10px;
+    padding: 7px;
+}
