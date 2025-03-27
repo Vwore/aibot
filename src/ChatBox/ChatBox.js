@@ -106,7 +106,7 @@ export default function ChatBox() {
         <TextField
           id="standard-basic"
           variant="standard"
-          placeholder="Message Bot AI…"
+          placeholder="Message Bot AI..."
           sx={{ background: "white", width: "80%" }}
           value={question}
           onChange={(e) => {
